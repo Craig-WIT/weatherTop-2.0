@@ -1,0 +1,31 @@
+<div class="ui segment" style="border: 3px solid #043F8C;">
+    <div class="ui five cards">
+        <div class="card" id="cardStyle"><h3>{{station.name}}</h3>
+          <p>Latitude {{station.lat}} <img class="ui image" id="weatherImage" src="../images/location.png">
+            <br>Longitude {{station.lng}}</p>
+        </div>
+        <div class="card" id="cardStyle"><h3>Weather</h3>
+          <p>{{station.weatherCode}}<img class="ui image" id="weatherImage" src={{station.weatherIcon}}></p>
+        </div>
+        <div class="card" id="cardStyle"><h3>Temperature<img class="ui image" id="trendImage" src={{station.tempTrend}}>
+        </h3>
+            <p>{{station.tempC}} °C <img class="ui image" id="weatherImage" src="../images/temperature.png">
+                <br>{{station.tempF}} °F
+                <br>Max: {{station.maxTemp}} °C
+                <br>Min: {{station.minTemp}} °C</p>
+        </div>
+        <div class="card" id="cardStyle"><h3>Wind<img class="ui image" id="trendImage" src={{station.windTrend}}></h3>
+            <p>{{station.windBft}} bft <img class="ui image" id="weatherImageSmall" src="../images/compass.png">
+                <br>{{station.windCompass}}
+                <br>Feels like
+                <br>{{station.windChill}} °C
+                <br>Max: {{station.maxWind}} kM / hr
+                <br>Min: {{station.minWind}} kM / hr</p>
+        </div>
+        <div class="card" id="cardStyle"><h3>Pressure<img class="ui image" id="trendImage" src={{station.pressureTrend}}></h3>
+            <p>{{station.pressure}} hPa <img class="ui image" id="weatherImage" src="../images/pressure.png">
+                <br>Max: {{station.maxPressure}} hPa
+                <br>Min: {{station.minPressure}} hPa</p>
+        </div>
+    </div>
+</div>
