@@ -4,11 +4,17 @@
       {{name}}
     </h2>
     {{> dashboardSummary}}
-    <a href="/station/{{id}}" class="ui icon button">
-      <i class="icon folder open"></i>
+    <a href="/station/{{id}}">
+      <div id="openButton" class="tiny green ui animated button" tabindex="0">
+        <div class="visible content">Open Readings</div>
+        <div class="hidden content">Are you sure?</div>
+      </div>
     </a>
-    <a href="/dashboard/deletestation/{{id}}" class="ui icon button">
-      <i class="icon trash"></i>
+    <a href="/dashboard/deletestation/{{id}}">
+      <div id="deleteButton" class="tiny red ui animated button" tabindex="0">
+        <div class="visible content">Delete Station</div>
+        <div class="hidden content">Are you sure?</div>
+      </div>
     </a>
   </section>
 {{/each}}

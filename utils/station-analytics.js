@@ -34,6 +34,25 @@ const stationAnalytics = {
       station.windTrend = this.windTrend(station.readings);
       station.pressureTrend = this.pressureTrend(station.readings);
     }
+    else{
+      station.tempC = null;
+      station.pressure = null;
+      station.tempF = null;
+      station.windBft = null;
+      station.windCompass = null;
+      station.windChill = null;
+      station.weatherCode = null;
+      station.weatherIcon = "../images/na.png";
+      station.maxTemp = null;
+      station.minTemp = null;
+      station.maxWind = null;
+      station.minWind = null;
+      station.maxPressure = null;
+      station.minPressure = null;
+      station.tempTrend = "../images/noTrend.png";
+      station.windTrend = "../images/noTrend.png";
+      station.pressureTrend = "../images/noTrend.png";
+    }
   },
 
   windChill(temp, windspeed) {
@@ -43,10 +62,11 @@ const stationAnalytics = {
 
   stationWeather(code){
     let weatherCode = "Not valid WeatherCode";
+    code = this.convertCode(code);
       if(code == 100) {
         weatherCode = "Clear";
         return weatherCode;
-      }else if(code == 200){
+      }else if((code == 200)){
         weatherCode = "Partial clouds";
         return weatherCode;
       }else if(code == 300) {
@@ -74,6 +94,7 @@ const stationAnalytics = {
 
   weatherIcon(code){
     let icon = "../images/na.png";
+    code = this.convertCode(code);
     if(code == 100) {
       icon = "../images/clear.png";;
       return icon;
@@ -216,6 +237,36 @@ const stationAnalytics = {
   }
   return trend;
 },
+
+  convertCode(code) {
+    if ((code === '01d') || (code === '01n')) {
+      code = 100;
+      return code;
+    } else if ((code === '02d') || (code === '02n') || (code === '03d') || (code === '03n')) {
+      code = 200;
+      return code;
+    } else if ((code === '04d') || (code === '04n')) {
+      code = 300;
+      return code;
+    } else if ((code === '50d') || (code === '50n')) {
+      code = 400;
+      return code;
+    } else if ((code === '10d') || (code === '10n')) {
+      code = 500;
+      return code;
+    } else if ((code === '09d') || (code === '09n')) {
+      code = 600;
+      return code;
+    } else if ((code === '13d') || (code === '13n')) {
+      code = 700;
+      return code;
+    } else if ((code === '11d') || (code === '11n')) {
+      code = 800;
+      return code;
+    } else {
+      return code;
+    }
+  },
 
 };
 

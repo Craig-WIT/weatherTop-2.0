@@ -1,5 +1,8 @@
 {{> menu id="dashboard"}}
 
   {{> listStations}}
+<div id="mapid"></div>
   {{> addStation}}
 
+<script src="../maps.js"></script>
+<script>var marker = L.marker([51.5, -0.09]).addTo(mymap);</script>

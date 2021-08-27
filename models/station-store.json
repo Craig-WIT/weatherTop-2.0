@@ -1,27 +1,188 @@
 {
   "stationCollection": [
     {
-      "id": "d93bcbd0-fec1-11eb-b007-3958110a7f7d",
-      "name": "Clare",
-      "lat": "10",
-      "lng": "10",
-      "readings": []
-    },
-    {
-      "id": "78b46190-fec2-11eb-adb6-5935b4ab5f4a",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Clare",
-      "lat": "10",
-      "lng": "10",
-      "readings": []
-    },
-    {
       "id": "875f6aa0-fec2-11eb-adb6-5935b4ab5f4a",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "name": "Derry",
       "lat": "10",
       "lng": "10",
-      "readings": []
+      "readings": [
+        {
+          "id": "d3cba400-028f-11ec-9253-257df013520b",
+          "code": 200,
+          "date": "2021-08-21 15:55:29",
+          "temperature": 5,
+          "windSpeed": 5,
+          "windDirection": 5,
+          "pressure": 1000
+        }
+      ],
+      "tempC": 5,
+      "pressure": 1000,
+      "tempF": 41,
+      "windBft": 1,
+      "windCompass": "North",
+      "windChill": 4.08,
+      "weatherCode": "Partial clouds",
+      "weatherIcon": "../images/partialcloud.png",
+      "maxTemp": 5,
+      "minTemp": 5,
+      "maxWind": 5,
+      "minWind": 5,
+      "maxPressure": 1000,
+      "minPressure": 1000,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
+    },
+    {
+      "id": "91febde0-0290-11ec-beb0-d3b2d7701ad0",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "name": "Clare",
+      "lat": "10",
+      "lng": "10",
+      "readings": [
+        {
+          "id": "48f14e50-0291-11ec-ae9d-311f69057304",
+          "code": 100,
+          "date": "2021-08-21 16:05:55",
+          "temperature": 0.3,
+          "windSpeed": 7,
+          "windDirection": 6,
+          "pressure": 1001
+        }
+      ],
+      "tempC": 0.3,
+      "pressure": 1001,
+      "tempF": 32.54,
+      "windBft": 2,
+      "windCompass": "North",
+      "windChill": -2.05,
+      "weatherCode": "Clear",
+      "weatherIcon": "../images/clear.png",
+      "maxTemp": 0.3,
+      "minTemp": 0.3,
+      "maxWind": 7,
+      "minWind": 7,
+      "maxPressure": 1001,
+      "minPressure": 1001,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
+    },
+    {
+      "id": "07c29980-06af-11ec-9b32-fbc92556f828",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Mullingar",
+      "lat": "53.529187",
+      "lng": "-7.335297",
+      "readings": [
+        {
+          "id": "a5402290-06af-11ec-9b32-fbc92556f828",
+          "date": "2021-08-26 21:53:20",
+          "code": 100,
+          "temperature": 16.54,
+          "windSpeed": 2.77,
+          "pressure": 1025,
+          "windDirection": 88
+        }
+      ],
+      "tempC": 16.54,
+      "pressure": 1025,
+      "tempF": 61.77,
+      "windBft": 1,
+      "windCompass": "East South East",
+      "windChill": 17.74,
+      "weatherCode": "Clear",
+      "weatherIcon": "../images/clear.png",
+      "maxTemp": 16.54,
+      "minTemp": 16.54,
+      "maxWind": 2.77,
+      "minWind": 2.77,
+      "maxPressure": 1025,
+      "minPressure": 1025,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
+    },
+    {
+      "id": "48f82c30-06af-11ec-9b32-fbc92556f828",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Galway",
+      "lat": "53.262461",
+      "lng": "-9.031311",
+      "readings": [
+        {
+          "id": "54ec79b0-06af-11ec-9b32-fbc92556f828",
+          "date": "2021-08-26 21:51:05",
+          "code": 100,
+          "temperature": 20.01,
+          "windSpeed": 1.97,
+          "pressure": 1024,
+          "windDirection": 29
+        },
+        {
+          "id": "5f4b55f0-06b6-11ec-a28b-13b7241276c6",
+          "date": "2021-08-26 22:41:29",
+          "code": 100,
+          "temperature": 20.01,
+          "windSpeed": 2.2,
+          "pressure": 1024,
+          "windDirection": 32
+        }
+      ],
+      "tempC": 20.01,
+      "pressure": 1024,
+      "tempF": 68.02,
+      "windBft": 1,
+      "windCompass": "North North East",
+      "windChill": 21.73,
+      "weatherCode": "Clear",
+      "weatherIcon": "../images/clear.png",
+      "maxTemp": 20.01,
+      "minTemp": 20.01,
+      "maxWind": 1.97,
+      "minWind": 1.97,
+      "maxPressure": 1024,
+      "minPressure": 1024,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
+    },
+    {
+      "id": "88b7e7c0-06af-11ec-9b32-fbc92556f828",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Swords",
+      "lat": "53.452385",
+      "lng": "-6.22403",
+      "readings": [
+        {
+          "id": "ac485df0-06af-11ec-9b32-fbc92556f828",
+          "date": "2021-08-26 21:53:32",
+          "code": 200,
+          "temperature": 14.9,
+          "windSpeed": 3.09,
+          "pressure": 1025,
+          "windDirection": 80
+        }
+      ],
+      "tempC": 14.9,
+      "pressure": 1025,
+      "tempF": 58.82,
+      "windBft": 1,
+      "windCompass": "East South East",
+      "windChill": 15.84,
+      "weatherCode": "Partial clouds",
+      "weatherIcon": "../images/partialcloud.png",
+      "maxTemp": 14.9,
+      "minTemp": 14.9,
+      "maxWind": 3.09,
+      "minWind": 3.09,
+      "maxPressure": 1025,
+      "minPressure": 1025,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
     }
   ]
 }

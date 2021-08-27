@@ -15,12 +15,16 @@ router.post("/dashboard/addStation", dashboard.addStation);
 router.get("/about", about.index);
 
 router.get('/station/:id', station.index);
+router.get('/station/:id/deleteReading/:readingid', station.deleteReading);
 router.post('/station/:id/addReading', station.addReading);
+router.post('/station/:id/addLiveReading', station.addLiveReading);
 
 router.get('/', accounts.index);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
 router.get('/logout', accounts.logout);
+router.get('/userDetails', accounts.userDetails);
+router.post('/userDetails/:id/updateUserDetails', accounts.updateUserDetails);
 router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
 

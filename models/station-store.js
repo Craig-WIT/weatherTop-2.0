@@ -33,11 +33,18 @@ const stationStore = {
     const station = this.getStation(id);
     station.readings.push(reading);
     this.store.save();
-    stationAnalytics.updateWeather(station);
+  },
+
+  removeReading(id, readingid) {
+    const station = this.getStation(id);
+    _.remove(station.readings, {id: readingid});
+    this.store.save();
   },
 
   getUserStations(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+    let stations = this.store.findBy(this.collection, { userid: userid })
+    const orderedStations = _.sortBy(stations, o => o.name)
+    return orderedStations;
   },
 
 };

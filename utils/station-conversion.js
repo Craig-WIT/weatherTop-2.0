@@ -5,7 +5,7 @@ const stationStore = require("../models/station-store");
 const stationConversion = {
 
   tempF(tempC){
-    return (tempC *1.8) +32;
+    return Math.round(((tempC *1.8) +32)*100)/100;
   },
 
   beafourt(windspeed) {
@@ -74,6 +74,17 @@ const stationConversion = {
     return "North";
   }
 },
+
+  convertDate(date){
+    let dateFormat =
+      date.getFullYear() + "-" +
+      ("00" + (date.getMonth() + 1)).slice(-2) + "-" +
+      ("00" + date.getDate()).slice(-2) + " " +
+      ("00" + date.getHours()).slice(-2) + ":" +
+      ("00" + date.getMinutes()).slice(-2) + ":" +
+      ("00" + date.getSeconds()).slice(-2);
+    return dateFormat;
+  }
 
 };
 

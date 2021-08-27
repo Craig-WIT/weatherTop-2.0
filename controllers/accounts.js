@@ -20,8 +20,27 @@ const accounts = {
     response.render('login', viewData);
   },
 
+  userDetails(request, response) {
+    const viewData = {
+      title: 'User Details',
+      user: accounts.getCurrentUser(request),
+    };
+    response.render('userDetails', viewData);
+  },
+
+  updateUserDetails(request, response) {
+    let user = accounts.getCurrentUser(request),
+    updatedUser = {
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      password: request.body.password
+    };
+    userstore.updateUser(user,updatedUser);
+    response.redirect('/userDetails');
+  },
+
   logout(request, response) {
-    response.cookie('playlist', '');
+    response.cookie('station', '');
     response.redirect('/');
   },
 
@@ -42,8 +61,8 @@ const accounts = {
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
-    if (user) {
-      response.cookie('playlist', user.email);
+    if ((user)&&(request.body.password === user.password)) {
+      response.cookie('station', user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
     } else {
@@ -52,7 +71,7 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userEmail = request.cookies.playlist;
+    const userEmail = request.cookies.station;
     return userstore.getUserByEmail(userEmail);
   },
 };

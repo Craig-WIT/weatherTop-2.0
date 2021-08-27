@@ -20,6 +20,13 @@
       "email": "craig@simpson.com",
       "password": "secret",
       "id": "98c30400-fec2-11eb-adb6-5935b4ab5f4a"
+    },
+    {
+      "firstName": "Craig",
+      "lastName": "Grehan",
+      "email": "example@simpson.com",
+      "password": "secret",
+      "id": "f1ef25d0-026f-11ec-bc21-f164d66ace3c"
     }
   ]
 }
