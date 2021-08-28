@@ -1,5 +1,14 @@
 {{> welcomemenu id="signup"}}
 
+<div class="ui icon message">
+  <i class="ui red exclamation circle icon"></i>
+  <div class="content">
+    <div class="header">
+      Signup failed!
+    </div>
+    <p>{{message}}</p>
+  </div>
+</div>
 <div class="ui two column grid basic middle aligned segment">
   <div class="column">
     <form class="ui stacked segment form" action="/register" method="POST"
@@ -8,11 +17,11 @@
       <div class="two fields">
         <div class="field">
           <label>First Name</label>
-          <input placeholder="First Name" type="text" name="firstName">
+          <input placeholder="First Name" type="text" name="firstname">
         </div>
         <div class="field">
           <label>Last Name</label>
-          <input placeholder="Last Name" type="text" name="lastName">
+          <input placeholder="Last Name" type="text" name="lastname">
         </div>
       </div>
       <div class="field">

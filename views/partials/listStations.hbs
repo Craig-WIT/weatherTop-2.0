@@ -1,8 +1,8 @@
+<section class="ui segment" style="border: 3px solid #043F8C; border-radius: 10px; background-color: #C9E5F0;">
+  <h2 class="ui header">
+    Weather Information
+  </h2>
 {{#each stations}}
-  <section class="ui segment">
-    <h2 class="ui header">
-      {{name}}
-    </h2>
     {{> dashboardSummary}}
     <a href="/station/{{id}}">
       <div id="openButton" class="tiny green ui animated button" tabindex="0">
@@ -16,5 +16,5 @@
         <div class="hidden content">Are you sure?</div>
       </div>
     </a>
-  </section>
 {{/each}}
+</section>

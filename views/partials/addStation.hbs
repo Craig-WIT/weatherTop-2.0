@@ -5,11 +5,11 @@
     <label>Station Name</label>
     <input placeholder="Station name" type="text" name="name">
     <label>Latitude</label>
-    <input placeholder="Latitude" type="number" name="lat" min="-90" max="90" step=".000001">
+    <input placeholder="Latitude" type="number" name="lat" min="-90" max="90" step=".000001" id="lat">
     <label>Longitude</label>
-    <input placeholder="Longitude" type="number" name="lng" min="-180" max="180" step=".000001">
+    <input placeholder="Longitude" type="number" name="lng" min="-180" max="180" step=".000001" id="lng">
   </div>
-  <button id="submitButton" class="tiny ui blue submit animated button">
+  <button id="submitButton" class="tiny ui blue submit animated button" onclick="addMarker(document.getElementById('lat').value,document.getElementById('lng').value)">
     <div class="visible content">Add Station</div>
     <div class="hidden content">Are you sure?</div>
   </button>

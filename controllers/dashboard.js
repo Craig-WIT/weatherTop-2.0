@@ -38,18 +38,27 @@ const dashboard = {
   },
   
   addStation(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    const newStation = {
-      id: uuid.v1(),
-      userid: loggedInUser.id,
-      name: request.body.name,
-      lat: request.body.lat,
-      lng: request.body.lng,
-      readings: [],
-    };
-    logger.debug('Creating a new Station', newStation);
-    stationStore.addStation(newStation);
-    response.redirect('/dashboard');
+    if (request.body.name === "" || request.body.lat === "" || request.body.lng === "") {
+      const loggedInUser = accounts.getCurrentUser(request);
+      const viewData = {
+        message: 'No details can be left blank, please try again!',
+        stations: stationStore.getUserStations(loggedInUser.id),
+      };
+      response.render('dashboardfail', viewData);
+    } else {
+      const loggedInUser = accounts.getCurrentUser(request);
+      const newStation = {
+        id: uuid.v1(),
+        userid: loggedInUser.id,
+        name: request.body.name,
+        lat: request.body.lat,
+        lng: request.body.lng,
+        readings: [],
+      };
+      logger.debug('Creating a new Station', newStation);
+      stationStore.addStation(newStation);
+      response.redirect('/dashboard');
+    }
   },
 };
 

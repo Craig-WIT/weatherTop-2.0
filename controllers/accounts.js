@@ -52,11 +52,25 @@ const accounts = {
   },
 
   register(request, response) {
-    const user = request.body;
-    user.id = uuid.v1();
-    userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
-    response.redirect('/');
+    if(request.body.email === "" || request.body.password === "" || request.body.firstName === "" || request.body.lastName === ""){
+      const viewData = {
+        title: 'Login to the Service',
+        message: 'No details can be left blank, please try again!',
+      };
+      response.render('signupfail', viewData);
+    } else if(userstore.getUserByEmail(request.body.email)){
+      const viewData = {
+        title: 'Login to the Service',
+        message: 'It looks like this email address is already registered!',
+      };
+      response.render('signupfail', viewData);
+    } else{
+      const user = request.body;
+      user.id = uuid.v1();
+      userstore.addUser(user);
+      logger.info(`registering ${user.email}`);
+      response.redirect('/');
+    }
   },
 
   authenticate(request, response) {
@@ -65,8 +79,16 @@ const accounts = {
       response.cookie('station', user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
-    } else {
-      response.redirect('/login');
+    } else if(!user){
+      const viewData = {
+        message: 'It looks like this email address is not registered yet!',
+      };
+      response.render('loginfail',viewData);
+    } else if(request.body.password != user.password) {
+      const viewData = {
+        message: 'Incorrect password entered, please try again!',
+      };
+      response.render('loginfail', viewData);
     }
   },
 

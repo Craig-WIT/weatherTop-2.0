@@ -9,11 +9,17 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 let  popup = L.popup();
 
+var layerGroup = L.layerGroup().addTo(mymap);
+
 function onMapClick(e) {
   popup
     .setLatLng(e.latlng)
     .setContent("You clicked the map at " + e.latlng.toString())
     .openOn(mymap);
+}
+
+function addMarker(lat,lng){
+  var marker = L.marker([lat, lng]).addTo(layerGroup);
 }
 
 mymap.on('click', onMapClick);

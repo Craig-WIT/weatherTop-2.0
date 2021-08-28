@@ -1,6 +1,16 @@
 {{> menu id="dashboard"}}
 
-  {{> listStations}}
+<div class="ui icon message">
+  <i class="ui red exclamation circle icon"></i>
+  <div class="content">
+    <div class="header">
+      Station not added!
+    </div>
+    <p>{{message}}</p>
+  </div>
+</div>
+
+{{> listStations}}
 
 <div id="mapid"></div>
 <div class="ui two column middle aligned grid basic segment">

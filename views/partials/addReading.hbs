@@ -1,5 +1,5 @@
-<form class="ui stacked segment form" action="/station/{{station.id}}/addReading" method="POST"
-      style="color: white; background-color: #C9E5F0; border: 3px solid white;">
+<form class="ui segment form" action="/station/{{station.id}}/addReading" method="POST"
+      style="color: white; background-color: #C9E5F0; border: 3px solid #043F8C;">
   <div class="field">
     <label>Weather Code</label>
     <input list="codes" placeholder="Code" name="code">
@@ -28,8 +28,8 @@
     <div class="hidden content">Are you sure?</div>
   </button>
 </form>
-<form class="ui stacked segment form" action="/station/{{station.id}}/addLiveReading" method="POST"
-      style="color: white; background-color: #C9E5F0; border: 3px solid white;">
+<form class="ui segment form" action="/station/{{station.id}}/addLiveReading" method="POST"
+      style="color: white; background-color: #C9E5F0; border: 3px solid #043F8C;">
   <button id="submitButton" class="tiny ui blue submit animated button">
     <div class="visible content">Add Live Reading for {{station.name}}</div>
     <div class="hidden content">Are you sure?</div>
