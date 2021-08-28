@@ -13,3 +13,20 @@
 </div>
 
 <script src="../maps.js"></script>
+<script>
+  const mapMarkers = {
+    markers: [{{#each stations}}
+      "{{name}}",{{/each}}],
+    latitudes: [{{#each stations}}
+      "{{lat}}",{{/each}}],
+    longitudes: [{{#each stations}}
+      "{{lng}}",{{/each}}],
+  }
+
+  for (let i = 0; i < mapMarkers.markers.length; i++) {
+    marker = new L.marker([mapMarkers.latitudes[i], mapMarkers.longitudes[i]])
+      .bindPopup(mapMarkers.markers[i])
+      .addTo(mymap);
+  }
+
+</script>

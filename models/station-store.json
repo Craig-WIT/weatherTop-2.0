@@ -316,77 +316,59 @@
           "windDirection": 107
         },
         {
-          "id": "6f34eb40-07ef-11ec-b94d-c9e8cf4e460d",
-          "date": "2021-08-28 12:02:28",
+          "id": "86d545c0-0807-11ec-92df-bde58d82a019",
+          "date": "2021-08-28 14:54:56",
           "code": 200,
-          "temperature": 18.8,
-          "windSpeed": 2.24,
-          "pressure": 1027,
-          "windDirection": 48
-        },
-        {
-          "id": "ef9927a0-07f0-11ec-9a41-dda01c07e6fe",
-          "date": "2021-08-28 12:13:13",
-          "code": 200,
-          "temperature": 19.06,
-          "windSpeed": 1.79,
-          "pressure": 1027,
-          "windDirection": 72
-        },
-        {
-          "id": "4469a610-07f1-11ec-91eb-ab106fb0a5fd",
-          "date": "2021-08-28 12:15:35",
-          "code": 200,
-          "temperature": 19.37,
-          "windSpeed": 2.24,
+          "temperature": 20.41,
+          "windSpeed": 2.68,
           "pressure": 1028,
-          "windDirection": 170
+          "windDirection": 63
         },
         {
-          "id": "ff1a3e00-07f3-11ec-9234-d5d37733b7c8",
-          "date": "2021-08-28 12:35:08",
+          "id": "501c8650-0808-11ec-8e3b-3f2e55e4682c",
+          "date": "2021-08-28 15:00:33",
           "code": 200,
-          "temperature": 19.59,
-          "windSpeed": 2.24,
-          "pressure": 1028,
-          "windDirection": 36
-        },
-        {
-          "id": "56477120-07f4-11ec-9234-d5d37733b7c8",
-          "date": "2021-08-28 12:37:34",
-          "code": 200,
-          "temperature": 19.59,
-          "windSpeed": 2.24,
-          "pressure": 1028,
-          "windDirection": 36
-        },
-        {
-          "id": "dfe0f020-07f7-11ec-8da3-33b72ac245b2",
-          "date": "2021-08-28 13:02:53",
-          "code": 200,
-          "temperature": 19.74,
+          "temperature": 20.39,
           "windSpeed": 2.68,
           "pressure": 1027,
-          "windDirection": 20
+          "windDirection": 61
+        },
+        {
+          "id": "90ce9120-0808-11ec-8e3b-3f2e55e4682c",
+          "date": "2021-08-28 15:02:22",
+          "code": 200,
+          "temperature": 20.58,
+          "windSpeed": 2.68,
+          "pressure": 1027,
+          "windDirection": 61
+        },
+        {
+          "id": "db7b3c50-0808-11ec-8e3b-3f2e55e4682c",
+          "date": "2021-08-28 15:04:27",
+          "code": 200,
+          "temperature": 20.58,
+          "windSpeed": 2.68,
+          "pressure": 1027,
+          "windDirection": 61
         }
       ],
-      "tempC": 0,
-      "pressure": 0,
-      "tempF": 32,
-      "windBft": 0,
-      "windCompass": "North",
-      "windChill": 13.12,
-      "weatherCode": "Not valid WeatherCode",
-      "weatherIcon": "../images/na.png",
-      "maxTemp": 19.74,
-      "minTemp": 0,
+      "tempC": 20.58,
+      "pressure": 1027,
+      "tempF": 69.04,
+      "windBft": 1,
+      "windCompass": "East",
+      "windChill": 22.15,
+      "weatherCode": "Partial clouds",
+      "weatherIcon": "../images/partialcloud.png",
+      "maxTemp": 20.58,
+      "minTemp": 13.61,
       "maxWind": 2.68,
-      "minWind": 0,
+      "minWind": 1.34,
       "maxPressure": 1028,
-      "minPressure": 0,
+      "minPressure": 1026,
       "tempTrend": "../images/noTrend.png",
       "windTrend": "../images/noTrend.png",
-      "pressureTrend": "../images/trendDown.png"
+      "pressureTrend": "../images/noTrend.png"
     },
     {
       "id": "a039c8a0-07d6-11ec-a458-051de8acfb26",
@@ -419,6 +401,41 @@
       "minWind": 4.14,
       "maxPressure": 1013,
       "minPressure": 1013,
+      "tempTrend": "../images/noTrend.png",
+      "windTrend": "../images/noTrend.png",
+      "pressureTrend": "../images/noTrend.png"
+    },
+    {
+      "id": "f8b8c190-0801-11ec-9894-29d7c5fe1e06",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Nottingham",
+      "lat": "52.941108",
+      "lng": "-1.150268",
+      "readings": [
+        {
+          "id": "010ba560-0802-11ec-9894-29d7c5fe1e06",
+          "date": "2021-08-28 14:15:24",
+          "code": 200,
+          "temperature": 20.59,
+          "windSpeed": 2.57,
+          "pressure": 1027,
+          "windDirection": 30
+        }
+      ],
+      "tempC": 20.59,
+      "pressure": 1027,
+      "tempF": 69.06,
+      "windBft": 1,
+      "windCompass": "North North East",
+      "windChill": 22.19,
+      "weatherCode": "Partial clouds",
+      "weatherIcon": "../images/partialcloud.png",
+      "maxTemp": 20.59,
+      "minTemp": 20.59,
+      "maxWind": 2.57,
+      "minWind": 2.57,
+      "maxPressure": 1027,
+      "minPressure": 1027,
       "tempTrend": "../images/noTrend.png",
       "windTrend": "../images/noTrend.png",
       "pressureTrend": "../images/noTrend.png"
