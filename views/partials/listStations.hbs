@@ -16,5 +16,11 @@
         <div class="hidden content">Are you sure?</div>
       </div>
     </a>
+    <form action="/station/{{id}}/addLiveReading" method="POST" style="display: inline">
+      <button id="submitButton" class="tiny ui blue submit animated button">
+        <div class="visible content">Add Live Reading for {{name}}</div>
+        <div class="hidden content">Are you sure?</div>
+      </button>
+    </form>
 {{/each}}
 </section>
