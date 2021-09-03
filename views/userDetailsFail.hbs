@@ -1,0 +1,47 @@
+{{> menu id="userDetails"}}
+
+<div class="ui icon message">
+  <i class="ui red exclamation circle icon"></i>
+  <div class="content">
+    <div class="header">
+      Member update failed!
+    </div>
+    <p>{{message}}</p>
+  </div>
+</div>
+<section class="ui segment" style="border: 3px solid #043F8C; border-radius: 10px; background-color: #C9E5F0;">
+  <h2 class="ui header">
+    User Details of {{user.firstName}} {{user.lastName}}
+  </h2>
+  <div class="ui segment" style="border: 3px solid #043F8C;">
+    <div class="ui four cards">
+      <div class="card" id="cardStyle"><h3>First Name</h3>
+        <p>{{user.firstName}}</p>
+      </div>
+      <div class="card" id="cardStyle"><h3>Last Name</h3>
+        <p>{{user.lastName}}</p>
+      </div>
+      <div class="card" id="cardStyle"><h3>Email Address</h3>
+        <p>{{user.email}}</p>
+      </div>
+      <div class="card" id="cardStyle"><h3>Password</h3>
+        <p>{{user.password}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<form class="ui stacked segment form" action="/userDetails/{{user.id}}/updateUserDetails" method="POST"
+      style="color: white; background-color: #C9E5F0; border: 3px solid white;">
+  <div class="field">
+    <label>Change First Name</label>
+    <input placeholder="New First Name" type="text" name="firstName">
+    <label>Change Last Name</label>
+    <input placeholder="New Last Name" type="text" name="lastName">
+    <label>Change Password</label>
+    <input placeholder="New Password" type="text" name="password">
+  </div>
+  <button id="submitButton" class="small ui blue submit animated button">
+    <div class="visible content">Update Details</div>
+    <div class="hidden content">Are you sure?</div>
+  </button>
+</form>

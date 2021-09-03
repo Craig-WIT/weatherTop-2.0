@@ -28,15 +28,29 @@ const accounts = {
     response.render('userDetails', viewData);
   },
 
-  updateUserDetails(request, response) {
-    let user = accounts.getCurrentUser(request),
-    updatedUser = {
-      firstName: request.body.firstName,
-      lastName: request.body.lastName,
-      password: request.body.password
+  userDetailsFail(request, response) {
+    const viewData = {
+      title: 'User Details',
+      user: accounts.getCurrentUser(request),
+      message: 'No details can be left blank, please try again!'
     };
-    userstore.updateUser(user,updatedUser);
-    response.redirect('/userDetails');
+    response.render('userDetailsFail', viewData);
+  },
+
+  updateUserDetails(request, response) {
+    let user = accounts.getCurrentUser(request);
+    let updatedUser = {};
+    if (request.body.firstName === "" || request.body.lastName === "" || request.body.password === "") {
+      response.redirect('/userDetailsFail');
+    }else {
+      updatedUser = {
+        firstName: request.body.firstName,
+        lastName: request.body.lastName,
+        password: request.body.password
+      };
+      userstore.updateUser(user, updatedUser);
+      response.redirect('/userDetails');
+    }
   },
 
   logout(request, response) {

@@ -21,6 +21,20 @@ const station = {
     response.render("station", viewData);
   },
 
+  stationFail(request, response) {
+    const stationId = request.params.id;
+    logger.debug("Station id = ", stationId);
+    const station = stationStore.getStation(stationId)
+    stationAnalytics.updateWeather(station);
+
+    const viewData = {
+      title: "WeatherTop 2.0",
+      station: stationStore.getStation(stationId),
+      message: 'No details can be left blank, please try again!'
+    };
+    response.render("stationFail", viewData);
+  },
+
   deleteReading(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
@@ -32,20 +46,25 @@ const station = {
 
   addReading(request, response) {
     const stationId = request.params.id;
-    const station = stationStore.getStation(stationId);
-    const newReading = {
-      id: uuid.v1(),
-      code: Number(request.body.code),
-      date: stationConversions.convertDate(new Date()),
-      temperature: Number(request.body.temperature),
-      windSpeed: Number(request.body.windSpeed),
-      windDirection: Number(request.body.windDirection),
-      pressure: Number(request.body.pressure),
-    };
-    logger.debug("New Reading = ", newReading);
-    stationStore.addReading(stationId, newReading);
-    stationAnalytics.updateWeather(station);
-    response.redirect("/station/" + stationId);
+    if (request.body.code === "" || request.body.windSpeed === "" || request.body.windDirection === "" || request.body.temperature === "" || request.body.pressure === "") {
+      response.redirect('/stationFail/' + stationId);
+    }else {
+      const stationId = request.params.id;
+      const station = stationStore.getStation(stationId);
+      const newReading = {
+        id: uuid.v1(),
+        code: Number(request.body.code),
+        date: stationConversions.convertDate(new Date()),
+        temperature: Number(request.body.temperature),
+        windSpeed: Number(request.body.windSpeed),
+        windDirection: Number(request.body.windDirection),
+        pressure: Number(request.body.pressure),
+      };
+      logger.debug("New Reading = ", newReading);
+      stationStore.addReading(stationId, newReading);
+      stationAnalytics.updateWeather(station);
+      response.redirect("/station/" + stationId);
+    }
   },
 
     async addLiveReading(request, response) {
